@@ -2,9 +2,12 @@
 // 그 중 전체 합이 100인 7개의 숫자를 뽑아 오름차순으로 출력
 // 조건 : 중복되지 않고 100이 넘지 않는 9개의 자연수가 주어지며
 // 가능한 답이 여러가지인 경우에는 아무거나 출력 (답이 없는 경우는 없다)
+// 4ms 928KB
 package main
 
 import (
+	"bufio"
+	"os"
 	"fmt"
 	"sort"
 	"strconv"
@@ -12,6 +15,8 @@ import (
 
 // 표준입력으로 받는 값을 dwarfSlice에 저장하고 출력할 값을 answer에 저장
 type DwarfData struct {
+	R       *bufio.Reader
+	W       *bufio.Writer
 	dwarfSlice []int
 	answer     []int
 }
@@ -20,10 +25,12 @@ type DwarfData struct {
 func inputAction() *DwarfData {
 	d := &DwarfData{}
 
+	d.R = bufio.NewReader(os.Stdin)
+	d.W = bufio.NewWriter(os.Stdout)
+
 	for i := 0; i < 9; i++ {
-		var str string
-		fmt.Scanln(&str)
-		num, _ := strconv.Atoi(str)
+		str, _, _ := d.R.ReadLine()
+		num, _ := strconv.Atoi(string(str))
 		d.dwarfSlice = append(d.dwarfSlice, num)
 	}
 	return d
@@ -42,18 +49,22 @@ func chooseDwarf(d *DwarfData) {
 					if num != d.dwarfSlice[i] && num != d.dwarfSlice[j] {
 						d.answer = append(d.answer, num)
 					}
+					if len(d.answer) == 7 {
+						goto END
+					}
 				}
 			}
 		}
 	}
+
+	END:
 	sort.Sort(sort.IntSlice(d.answer))
 }
 
 func main() {
 	d := inputAction()
+	defer d.W.Flush()
 	chooseDwarf(d)
-	// fmt.Println(d.answer)
-	fmt.Println("=================")
 	for _, realDwarf := range d.answer {
 		fmt.Println(realDwarf)
 	}
