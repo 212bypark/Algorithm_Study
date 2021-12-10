@@ -22,7 +22,7 @@ type DwarfData struct {
 }
 
 // 표준입력 처리를 위한 함수이다. 개행을 기준으로 파싱
-func inputAction() *DwarfData {
+func InputAction() *DwarfData {
 	d := &DwarfData{}
 
 	d.R = bufio.NewReader(os.Stdin)
@@ -37,7 +37,7 @@ func inputAction() *DwarfData {
 }
 
 // 조건에 만족하는 숫자를 찾아 DwarfData.answer에 저장하고 정렬
-func chooseDwarf(d *DwarfData) {
+func ChooseDwarf(d *DwarfData) {
 	totalSum := 0
 	for _, val := range d.dwarfSlice {
 		totalSum += val
