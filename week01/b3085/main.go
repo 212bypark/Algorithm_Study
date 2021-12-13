@@ -2,39 +2,112 @@ package main
 
 import (
 	"bufio"
-	"os"
 	"fmt"
-	"strconv"
+	"os"
+	"strings"
 )
 
-type Data struct {
+type myData struct {
 	R *bufio.Reader
-	num int
-	candySlice [][]int
+	W *bufio.Writer
+
+	num        int
+	candySlice [][]string
 }
 
-func InputAction() *Data {
-	d := &Data{}
+func inputAction() *myData {
+	d := &myData{}
 	d.R = bufio.NewReader(os.Stdin)
-	str, _, _ := d.R.ReadLine()
-	d.num, _ = strconv.Atoi(string(str))
-	// fmt.Fscanln(d.R, &d.num)
-	fmt.Println("num:", d.num)
-	var candyArray [][] int
+	d.W = bufio.NewWriter(os.Stdout)
+
+	fmt.Fscanln(d.R, &d.num)
 	for i := 0; i < d.num; i++ {
-		// fmt.Fscan(d.R, candyArray[i][:])
-		line, _, _ := d.R.ReadLine()
-		for j := 0; j < d.num; j++ {
-			val := 0
-			fmt.Fscan(string(line), val)
-			candyArray = append(candyArray, val)
-		}
-		fmt.Println("->", candyArray)
+		input, _ := d.R.ReadString('\n')
+		inputArray := strings.Split(strings.ReplaceAll(input, "\n", ""), "")
+		d.candySlice = append(d.candySlice, inputArray)
 	}
 	return d
 }
 
+func swap(i, j, a, b int, candySlice [][]string) [][]string {
+	// fmt.Println("before:", candySlice)
+	candySlice[i][j], candySlice[a][b] = candySlice[a][b], candySlice[i][j]
+	// fmt.Println("after :", candySlice)
+	return candySlice
+}
+
+func checkMax(maxCount int, candySlice [][]string) int {
+	max := 0
+	previous := ""
+	// compare each row value
+	for i := 0; i < len(candySlice); i++ {
+		count := 0
+		for j := 0; j < len(candySlice); j++ {
+			current := candySlice[i][j]
+			if previous == current {
+				count++
+				if max < count {
+					max = count
+				}
+			} else {
+				count = 1
+			}
+			previous = current
+		}
+	}
+	// compare each column value
+	previous = ""
+	for i := 0; i < len(candySlice); i++ {
+		count := 0
+		for j := 0; j < len(candySlice); j++ {
+			current := candySlice[j][i]
+			if previous == current {
+				count++
+				if max < count {
+					max = count
+				}
+			} else {
+				count = 1
+			}
+			previous = current
+		}
+	}
+	if max < maxCount {
+		max = maxCount
+	}
+	return max
+}
+
+func countMax(d *myData) int {
+	maxCount := 0
+	for i := 0; i < d.num; i++ {
+		for j := 0; j < d.num; j++ {
+			if j != d.num-1 {
+				// fmt.Println("Before:", d.candySlice)
+				d.candySlice = swap(i, j, i, j+1, d.candySlice)
+				// fmt.Println("After :", d.candySlice)
+				maxCount = checkMax(maxCount, d.candySlice)
+				d.candySlice = swap(i, j, i, j+1, d.candySlice)
+				// fmt.Println("END   :", d.candySlice)
+				// fmt.Println("-----------------------------------")
+			}
+			if i != d.num-1 {
+				// fmt.Println("Before:", d.candySlice)
+				d.candySlice = swap(i, j, i+1, j, d.candySlice)
+				// fmt.Println("After :", d.candySlice)
+				maxCount = checkMax(maxCount, d.candySlice)
+				d.candySlice = swap(i, j, i+1, j, d.candySlice)
+				// fmt.Println("END   :", d.candySlice)
+				// fmt.Println("-----------------------------------")
+			}
+		}
+	}
+	return maxCount
+}
+
 func main() {
-	d := InputAction()
-	fmt.Println(d.candySlice)
+	d := inputAction()
+	defer d.W.Flush()
+	ans := countMax(d)
+	fmt.Println(ans)
 }

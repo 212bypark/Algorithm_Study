@@ -7,16 +7,16 @@ package main
 
 import (
 	"bufio"
-	"os"
 	"fmt"
+	"os"
 	"sort"
 	"strconv"
 )
 
 // 표준입력으로 받는 값을 dwarfSlice에 저장하고 출력할 값을 answer에 저장
 type DwarfData struct {
-	R       *bufio.Reader
-	W       *bufio.Writer
+	R          *bufio.Reader
+	W          *bufio.Writer
 	dwarfSlice []int
 	answer     []int
 }
@@ -57,14 +57,14 @@ func ChooseDwarf(d *DwarfData) {
 		}
 	}
 
-	END:
+END:
 	sort.Sort(sort.IntSlice(d.answer))
 }
 
 func main() {
-	d := inputAction()
+	d := InputAction()
 	defer d.W.Flush()
-	chooseDwarf(d)
+	ChooseDwarf(d)
 	for _, realDwarf := range d.answer {
 		fmt.Println(realDwarf)
 	}
