@@ -2,6 +2,11 @@
 
 출처 : https://www.acmicpc.net/problem/2331
 
+<table>
+<td>시간 제한</td><td>2초</td>
+<td>메모리 제한</td><td>256MB</td>
+</table>
+
 ## **문제**
 
 다음과 같이 정의된 수열이 있다.

@@ -2,6 +2,11 @@
 
 출처 : https://www.acmicpc.net/problem/3085
 
+<table>
+<td>시간 제한</td><td>1초</td>
+<td>메모리 제한</td><td>128MB</td>
+</table>
+
 ## **문제**
 
 상근이는 어렸을 적에 "봄보니 (Bomboni)" 게임을 즐겨했다.

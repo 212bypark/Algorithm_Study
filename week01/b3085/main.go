@@ -30,9 +30,7 @@ func inputAction() *myData {
 }
 
 func swap(i, j, a, b int, candySlice [][]string) [][]string {
-	// fmt.Println("before:", candySlice)
 	candySlice[i][j], candySlice[a][b] = candySlice[a][b], candySlice[i][j]
-	// fmt.Println("after :", candySlice)
 	return candySlice
 }
 
@@ -83,22 +81,14 @@ func countMax(d *myData) int {
 	for i := 0; i < d.num; i++ {
 		for j := 0; j < d.num; j++ {
 			if j != d.num-1 {
-				// fmt.Println("Before:", d.candySlice)
 				d.candySlice = swap(i, j, i, j+1, d.candySlice)
-				// fmt.Println("After :", d.candySlice)
 				maxCount = checkMax(maxCount, d.candySlice)
 				d.candySlice = swap(i, j, i, j+1, d.candySlice)
-				// fmt.Println("END   :", d.candySlice)
-				// fmt.Println("-----------------------------------")
 			}
 			if i != d.num-1 {
-				// fmt.Println("Before:", d.candySlice)
 				d.candySlice = swap(i, j, i+1, j, d.candySlice)
-				// fmt.Println("After :", d.candySlice)
 				maxCount = checkMax(maxCount, d.candySlice)
 				d.candySlice = swap(i, j, i+1, j, d.candySlice)
-				// fmt.Println("END   :", d.candySlice)
-				// fmt.Println("-----------------------------------")
 			}
 		}
 	}
