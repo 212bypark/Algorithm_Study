@@ -6,6 +6,7 @@ import (
 	"os"
 )
 
+// myData 구조체에 표준입력을 통해 받은 n,s 값과 전체수열 저장
 type myData struct {
 	R *bufio.Reader
 	W *bufio.Writer
@@ -15,6 +16,7 @@ type myData struct {
 	sequenceArray []int
 }
 
+// 표준입력을 통해 값을 받아옴
 func inputAction() *myData {
 	d := &myData{}
 	d.R = bufio.NewReader(os.Stdin)
@@ -29,6 +31,8 @@ func inputAction() *myData {
 	return d
 }
 
+// 2^(num) 연산 수행
+// math 패키지의 Pow(x, y float64) float64 함수로 대체 가능
 func squaredPower(num int) int {
 	val := 1
 	for i := 0; i < num; i++ {
@@ -37,6 +41,11 @@ func squaredPower(num int) int {
 	return val
 }
 
+// 2^(전체수열크기)  만큼 부분수열을 만들 수 있는 경우의 수 존재
+// 부분수열은 하나 이상의 값을 포함해야 함 -> for문 i=1부터 시작
+// 2진법 로직을 이용하여 문제 해결
+// count 변수에 S값을 만들 수 있는 부분수열의 경우의 수 저장
+// Complexity - Time: O(2^n) Exponential | Space: O(1)
 func checkAvail(d *myData) int {
 	count := 0
 	numCheck := squaredPower(d.n)

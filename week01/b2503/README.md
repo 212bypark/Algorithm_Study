@@ -1,4 +1,4 @@
-# **사탕게임**
+# **숫자야구**
 
 출처 : https://www.acmicpc.net/problem/2503
 

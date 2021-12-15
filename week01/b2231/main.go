@@ -2,22 +2,25 @@ package main
 
 import (
 	"bufio"
-	"os"
 	"fmt"
+	"os"
 )
 
+// myData 구조체에 표준입력을 통해 받은 숫자 저장
 type Data struct {
-	R *bufio.Reader
+	R   *bufio.Reader
 	num int
 }
 
-func InputAction() *Data{
+// 표준입력을 통해 값을 받아옴
+func InputAction() *Data {
 	d := &Data{}
 	d.R = bufio.NewReader(os.Stdin)
 	fmt.Fscan(d.R, &d.num)
 	return d
 }
 
+// 분해합
 func SplitSum(num int) int {
 	sum := num
 	for num != 0 {
@@ -27,6 +30,7 @@ func SplitSum(num int) int {
 	return sum
 }
 
+// Complexity - Time: O(n) Quardratic | Space: O(1)
 func Solution(d *Data) {
 	ans := 0
 	for i := 0; i < d.num; i++ {

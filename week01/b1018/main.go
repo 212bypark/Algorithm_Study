@@ -6,6 +6,7 @@ import (
 	"os"
 )
 
+// myData 구조체에 표준입력을 통해 받은 n,m 값과 보드를 수열로 저장
 type myData struct {
 	R *bufio.Reader
 	W *bufio.Writer
@@ -15,6 +16,7 @@ type myData struct {
 	chess []string
 }
 
+// 표준입력을 통해 값을 받아옴
 func inputAction() *myData {
 	d := &myData{}
 	d.R = bufio.NewReader(os.Stdin)
@@ -29,6 +31,8 @@ func inputAction() *myData {
 	return d
 }
 
+// 두 매개변수를 비교하여 더 작은 값 반환
+// math 패키지의 Min(x, y float64) float64 함수로 대체 가능
 func myMin(num1, num2 int) int {
 	if num1 > num2 {
 		return num2
@@ -37,6 +41,9 @@ func myMin(num1, num2 int) int {
 	}
 }
 
+// 8X8 보드를 만들어야 함 i, j 크기가 8만큼 순회
+// a, b 변수는 보드에서 각각 x, y 좌표 의미
+// Complexity - Time: O(n^2) Quardratic | Space: O(1)
 func count(d *myData) int {
 	min := d.n * d.m
 	for i := 0; i < d.n-7; i++ {

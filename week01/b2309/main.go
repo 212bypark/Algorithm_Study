@@ -37,6 +37,7 @@ func InputAction() *DwarfData {
 }
 
 // 조건에 만족하는 숫자를 찾아 DwarfData.answer에 저장하고 정렬
+// Complexity - Time: O(n^3) Cubic | Space: O(1)
 func ChooseDwarf(d *DwarfData) {
 	totalSum := 0
 	for _, val := range d.dwarfSlice {
