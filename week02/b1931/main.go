@@ -21,6 +21,7 @@ type room struct {
 	count   int
 }
 
+// 회의가 일찍 끝나는 순서 (같은면 일찍 시작하는 순서)
 func solution() {
 	d := &myData{}
 
@@ -39,7 +40,6 @@ func solution() {
 		}
 		return meetingInfo[i].endTime < meetingInfo[j].endTime
 	})
-	// fmt.Println(meetingInfo)
 	var data []room
 	for i := 0; i < num; i++ {
 		var sT, eT uint32
@@ -65,7 +65,6 @@ func solution() {
 				}
 			}
 		}
-		// sort.Slice(data, func(i, j int) bool { return data[i].count > data[j].count })
 	}
 	fmt.Println(data[0].count)
 }
