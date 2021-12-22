@@ -30,8 +30,6 @@
 
 </br>
 
-<table>
-<td valign="top" width="50%">
 
 ## 예제입력1
 
@@ -41,24 +39,12 @@
 1 6 9 3 6 7
 ```
 
-</td>
-
-<td>
-
-</td>
-
-<td valign="top" width="50%">
 
 ## 예제 출력1
 ```
 5
 ```
 
-</td>
-</table>
-
-<table>
-<td valign="top" width="50%">
 
 ## 예제입력2
 
@@ -68,18 +54,9 @@
 20 3 14 6 7 8 18 10 12 15
 ```
 
-</td>
-
-<td>
-
-</td>
-
-<td valign="top" width="50%">
 
 ## 예제 출력2
 ```
 7
 ```
 
-</td>
-</table>

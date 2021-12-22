@@ -26,10 +26,6 @@
 
 </br>
 
-
-<table>
-<td valign="top" width="50%">
-
 ## 예제입력1
 
 ```
@@ -46,18 +42,8 @@
 2 13
 12 14
 ```
-</td>
-
-<td>
-
-</td>
-
-<td valign="top" width="50%">
 
 ## 예제 출력1
 ```
 4
 ```
-
-</td>
-</table>

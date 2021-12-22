@@ -34,9 +34,6 @@
 </br>
 
 
-<table>
-<td valign="top" width="50%">
-
 ## 예제입력1
 
 ```
@@ -44,20 +41,9 @@
 5 8 17
 0 0 0
 ```
-</td>
-
-<td>
-
-</td>
-
-<td valign="top" width="50%">
 
 ## 예제 출력1
 ```
 Case 1: 14
 Case 2: 11
 ```
-
-</td>
-</table>
-

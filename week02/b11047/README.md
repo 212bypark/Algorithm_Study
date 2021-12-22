@@ -30,9 +30,6 @@
 </br>
 
 
-<table>
-<td valign="top" width="50%">
-
 ## 예제입력1
 
 ```
@@ -48,24 +45,12 @@
 10000
 50000
 ```
-</td>
-
-<td>
-
-</td>
-
-<td valign="top" width="50%">
 
 ## 예제 출력1
 ```
 6
 ```
 
-</td>
-</table>
-
-<table>
-<td valign="top" width="50%">
 
 ## 예제입력2
 
@@ -82,18 +67,8 @@
 10000
 50000
 ```
-</td>
-
-<td>
-
-</td>
-
-<td valign="top" width="50%">
 
 ## 예제 출력2
 ```
 12
 ```
-
-</td>
-</table>

@@ -33,9 +33,6 @@
 
 </br>
 
-<table>
-<td valign="top" width="50%">
-
 ## 예제입력1
 
 ```
@@ -44,15 +41,7 @@
 2 4
 3 5
 ```
-
-</td>
-
-<td valign="top" width="50%">
-
 ## 예제 출력1
 ```
 2
 ```
-
-</td>
-</table>

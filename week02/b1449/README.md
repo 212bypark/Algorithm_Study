@@ -36,34 +36,18 @@
 
 </br>
 
-
-<table>
-<td valign="top" width="50%">
-
 ## 예제입력1
 
 ```
 4 2
 1 2 100 101
 ```
-</td>
-
-<td>
-
-</td>
-
-<td valign="top" width="50%">
 
 ## 예제 출력1
 ```
 2
 ```
 
-</td>
-</table>
-
-<table>
-<td valign="top" width="50%">
 
 ## 예제입력2
 
@@ -71,24 +55,12 @@
 4 3
 1 2 3 4
 ```
-</td>
-
-<td>
-
-</td>
-
-<td valign="top" width="50%">
 
 ## 예제 출력2
 ```
 2
 ```
 
-</td>
-</table>
-
-<table>
-<td valign="top" width="50%">
 
 ## 예제입력3
 
@@ -96,18 +68,8 @@
 3 1
 3 2 1
 ```
-</td>
-
-<td>
-
-</td>
-
-<td valign="top" width="50%">
 
 ## 예제 출력3
 ```
 3
 ```
-
-</td>
-</table>

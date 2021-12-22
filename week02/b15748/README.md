@@ -35,8 +35,6 @@ A single integer: the maximum total tastiness units Bessie can obtain.
 
 </br>
 
-<table>
-<td valign="top" width="50%">
 
 ## 예제입력1
 
@@ -46,18 +44,7 @@ A single integer: the maximum total tastiness units Bessie can obtain.
 8 1
 ```
 
-</td>
-
-<td>
-
-</td>
-
-<td valign="top" width="50%">
-
 ## 예제 출력1
 ```
 15
 ```
-
-</td>
-</table>
