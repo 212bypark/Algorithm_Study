@@ -71,6 +71,7 @@ func getMaxScore(d *myData) int {
 		if index != -1 {
 			maxScore += popSum(d, index)
 		}
+		fmt.Println(d.assignmentArr)
 	}
 	// fmt.Println("flag:", d.assignmentArr)
 	return maxScore

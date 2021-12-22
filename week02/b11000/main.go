@@ -32,7 +32,6 @@ func main() {
 		}
 		return arr[i][1] < arr[j][1]
 	})
-	// fmt.Println(arr)
 	concurr := int64(0)
 	max := int64(0)
 	for _, v := range arr {
