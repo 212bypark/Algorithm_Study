@@ -47,10 +47,6 @@
 
 </td>
 
-<td>
-
-</td>
-
 <td valign="top" width="50%">
 
 ## 예제 출력1
