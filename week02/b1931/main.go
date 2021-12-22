@@ -1,3 +1,5 @@
+// Memory: 11020KB
+// Time : 3956ms
 package main
 
 import (
@@ -21,6 +23,7 @@ type room struct {
 	count   int
 }
 
+// 하나의 강의실에 최대한 많은 강의 수
 // 회의가 일찍 끝나는 순서 (같은면 일찍 시작하는 순서)
 func solution() {
 	d := &myData{}

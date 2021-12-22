@@ -1,3 +1,5 @@
+// Memory: 14240KB
+// Time : 336ms
 package main
 
 import (
@@ -7,6 +9,11 @@ import (
 	"sort"
 )
 
+// 모든 강의 최소 강의실 수
+// 사작시간과 종료시간 모두 오름차순 정렬 후
+// 강의실 개수 카운트
+// 시작시간 : 1 , 종료시간 : -1
+// 주의 : 시작시간과 종료시간이 같다면 종료시간이 먼저!!
 func main() {
 	R := bufio.NewReader(os.Stdin)
 	var N int
@@ -25,7 +32,7 @@ func main() {
 		}
 		return arr[i][1] < arr[j][1]
 	})
-
+	// fmt.Println(arr)
 	concurr := int64(0)
 	max := int64(0)
 	for _, v := range arr {

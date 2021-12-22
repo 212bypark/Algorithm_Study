@@ -1,3 +1,5 @@
+// Memory: 976KB
+// Time : 4ms
 package main
 
 import (
