@@ -53,7 +53,6 @@ func getMaxSize() {
 		if tmp > val {
 			val = tmp
 		}
-		// fmt.Println("(baselen, val)=", baselen, ", ", val)
 	}
 	fmt.Println(val)
 }
