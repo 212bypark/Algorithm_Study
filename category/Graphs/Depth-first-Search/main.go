@@ -6,6 +6,9 @@ type Node struct {
 }
 
 func (n *Node) DepthFirstSearch(array []string) []string {
-	// Write your code here.
-	return nil
+	array = append(array, n.Name)
+	for _, child := range n.Children {
+		array = child.DepthFirstSearch(array)
+	}
+	return array
 }
